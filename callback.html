@@ -1,0 +1,39 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Collegamento — TipsMotivazionale</title>
+<style>
+body{margin:0;background:#0b0b0b;color:#e8e6e1;
+ font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+ display:grid;place-items:center;min-height:100vh;padding:2rem}
+main{max-width:34rem;text-align:center}
+h1{font-size:1.4rem;margin:0 0 1rem}
+.marchio{font-weight:700;letter-spacing:.02em;margin-bottom:1.6rem;font-size:1.1rem}
+.marchio span{color:#d4a72c}
+code{display:block;background:#161616;border:1px solid #2a2a2a;border-radius:6px;
+ padding:1rem;margin:1.2rem 0;word-break:break-all;font-size:.85rem;color:#d4a72c}
+p{color:#9a968e;font-size:.95rem}
+a{color:#d4a72c}
+</style></head><body><main>
+<div class="marchio">TIPS<span>MOTIVAZIONALE</span></div>
+<h1 id="t">Collegamento in corso…</h1>
+<p id="p">Ti riporto all'applicazione. Se non succede niente entro qualche
+secondo, copia il codice qui sotto e incollalo nel terminale.</p>
+<code id="c">—</code>
+<script>
+// TikTok pretende un indirizzo https e non accetta localhost. Questa pagina
+// fa da ponte: riceve il codice e lo gira all'applicazione sul computer.
+// Il passaggio da https a http verso localhost e' una navigazione, non una
+// risorsa: i browser la consentono.
+var q = new URLSearchParams(location.search);
+var code = q.get('code'), err = q.get('error_description') || q.get('error');
+var c = document.getElementById('c');
+if (code) {
+  c.textContent = code;
+  location.replace('http://localhost:8732/callback?' + q.toString());
+} else {
+  document.getElementById('t').textContent = 'Autorizzazione non riuscita';
+  document.getElementById('p').textContent = err || 'TikTok non ha restituito un codice.';
+  c.style.display = 'none';
+}
+</script>
+</main></body></html>
