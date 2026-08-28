@@ -1,0 +1,97 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Da pubblicare su TikTok — TipsMotivazionale</title>
+<style>
+:root{--oro:#d4a72c;--fondo:#0b0b0b;--carta:#151515;--bordo:#262626;
+      --testo:#e8e6e1;--tenue:#9a968e;--sale:#7bbf6a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--fondo);color:var(--testo);
+     font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+     padding:1.6rem 1.1rem 3rem;-webkit-text-size-adjust:100%}
+main{max-width:34rem;margin:0 auto;display:flex;flex-direction:column;gap:1rem}
+.testata{display:flex;flex-direction:column;gap:.15rem;margin-bottom:.4rem}
+.marchio{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+         color:var(--tenue);font-weight:700}
+.marchio span{color:var(--oro)}
+.aggiornato{font-size:.8rem;color:var(--tenue)}
+.totale{font-size:2.6rem;line-height:1.05;font-weight:800;letter-spacing:-.02em;
+        font-variant-numeric:tabular-nums}
+.totale small{display:block;font-size:.82rem;font-weight:500;color:var(--tenue);
+              letter-spacing:0;margin-top:.2rem}
+.carta{background:var(--carta);border:1px solid var(--bordo);border-radius:14px;
+       padding:1rem 1.05rem;display:flex;flex-direction:column;gap:.55rem}
+.nome{font-size:1.02rem;font-weight:700;line-height:1.25}
+.quando{font-size:.82rem;color:var(--tenue)}
+.stato{font-size:.9rem;display:flex;align-items:center;gap:.45rem}
+.pallino{width:.5rem;height:.5rem;border-radius:50%;background:var(--tenue);
+         flex:none}
+.sale .pallino{background:var(--sale)}
+.sale{color:var(--sale)}
+.grosso{font-size:1.9rem;font-weight:800;font-variant-numeric:tabular-nums;
+        letter-spacing:-.02em}
+.grosso small{font-size:.8rem;font-weight:500;color:var(--tenue);
+              letter-spacing:0;margin-left:.35rem}
+.dettagli{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;
+          border-top:1px solid var(--bordo);padding-top:.7rem}
+.dettagli div{display:flex;flex-direction:column;gap:.1rem}
+.dettagli b{font-size:1.05rem;font-weight:700;font-variant-numeric:tabular-nums}
+.dettagli span{font-size:.68rem;color:var(--tenue);text-transform:uppercase;
+               letter-spacing:.05em}
+.follower{background:var(--carta);border:1px solid var(--bordo);
+          border-left:3px solid var(--oro);border-radius:12px;padding:.9rem 1rem;
+          font-size:.92rem;white-space:pre-line}
+.vuoto{color:var(--tenue);text-align:center;padding:2.5rem 0}
+
+video{width:100%;border-radius:14px;border:1px solid var(--bordo);display:block}
+.didascalia{background:var(--carta);border:1px solid var(--bordo);
+  border-radius:14px;padding:1rem;white-space:pre-wrap;font-size:.95rem;
+  max-height:16rem;overflow-y:auto}
+button{width:100%;padding:1rem;font-size:1rem;font-weight:700;font-family:inherit;
+  color:#0b0b0b;background:var(--oro);border:0;border-radius:12px;
+  cursor:pointer;-webkit-appearance:none}
+button:active{opacity:.8}
+button.fatto{background:var(--sale)}
+</style></head><body><main>
+<header class="testata">
+  <p class="marchio">TIPS<span>MOTIVAZIONALE</span></p>
+  <p class="nome" style="font-size:1.3rem">67-lego-la-peggiore-perdita</p>
+  <p class="quando">Il video sta nelle <b>notifiche</b> di TikTok, non nelle
+     Bozze: apri l'icona dei messaggi e tocca l'avviso. Poi copia qui la
+     didascalia.</p>
+</header>
+<video controls preload="metadata" src="video/67-lego-la-peggiore-perdita.mp4"></video>
+<button id="copia">Copia la didascalia</button>
+<div class="didascalia" id="testo">Nel 2004 LEGO registra la peggiore perdita della sua storia: quasi 2 miliardi di corone danesi, con un fatturato che vale appena un sesto di quello di oggi. L&#x27;azienda rischia il default sul debito.
+
+La famiglia fondatrice fa un passo indietro: arriva alla guida un manager esterno di 35 anni, il primo in trent&#x27;anni a non portare il cognome dei fondatori. La sua prima mossa non è inventare qualcosa di nuovo: è vendere il 70% dei parchi Legoland per 375 milioni di euro e tagliare tutto quello che non è il mattoncino.
+
+Un anno dopo LEGO torna in utile. Nel 2014 supera Mattel e diventa la più grande azienda di giocattoli al mondo. A marzo 2026 chiude l&#x27;anno migliore della sua storia. E ieri, 25 agosto 2026, annuncia un semestre record: utile netto +32%, trainato dai set Formula 1 e Mondiali.
+
+LEGO non si è salvata inventando di più: si è salvata smettendo di fare quasi tutto, per fare bene una cosa sola.
+
+Se anche tu stai facendo troppe cose a metà invece di farne bene una, scrivi FOCUS nei commenti.
+
+Seguici per non perderti le nuove storie vere. Ogni giorno.
+
+#storiedisuccesso #motivazione #crescitapersonale #mentalità #tipsmotivazionale</div>
+</main>
+<script>
+const b = document.getElementById('copia');
+b.addEventListener('click', async () => {
+  const t = document.getElementById('testo').innerText;
+  try { await navigator.clipboard.writeText(t); }
+  catch (e) {
+    const s = document.createRange();
+    s.selectNodeContents(document.getElementById('testo'));
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(s);
+    document.execCommand('copy'); sel.removeAllRanges();
+  }
+  b.textContent = 'Copiata'; b.classList.add('fatto');
+  setTimeout(() => { b.textContent = 'Copia la didascalia';
+                     b.classList.remove('fatto'); }, 2500);
+});
+</script></body></html>
