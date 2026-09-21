@@ -1,0 +1,97 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Da pubblicare su TikTok — TipsMotivazionale</title>
+<style>
+:root{--oro:#d4a72c;--fondo:#0b0b0b;--carta:#151515;--bordo:#262626;
+      --testo:#e8e6e1;--tenue:#9a968e;--sale:#7bbf6a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--fondo);color:var(--testo);
+     font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+     padding:1.6rem 1.1rem 3rem;-webkit-text-size-adjust:100%}
+main{max-width:34rem;margin:0 auto;display:flex;flex-direction:column;gap:1rem}
+.testata{display:flex;flex-direction:column;gap:.15rem;margin-bottom:.4rem}
+.marchio{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+         color:var(--tenue);font-weight:700}
+.marchio span{color:var(--oro)}
+.aggiornato{font-size:.8rem;color:var(--tenue)}
+.totale{font-size:2.6rem;line-height:1.05;font-weight:800;letter-spacing:-.02em;
+        font-variant-numeric:tabular-nums}
+.totale small{display:block;font-size:.82rem;font-weight:500;color:var(--tenue);
+              letter-spacing:0;margin-top:.2rem}
+.carta{background:var(--carta);border:1px solid var(--bordo);border-radius:14px;
+       padding:1rem 1.05rem;display:flex;flex-direction:column;gap:.55rem}
+.nome{font-size:1.02rem;font-weight:700;line-height:1.25}
+.quando{font-size:.82rem;color:var(--tenue)}
+.stato{font-size:.9rem;display:flex;align-items:center;gap:.45rem}
+.pallino{width:.5rem;height:.5rem;border-radius:50%;background:var(--tenue);
+         flex:none}
+.sale .pallino{background:var(--sale)}
+.sale{color:var(--sale)}
+.grosso{font-size:1.9rem;font-weight:800;font-variant-numeric:tabular-nums;
+        letter-spacing:-.02em}
+.grosso small{font-size:.8rem;font-weight:500;color:var(--tenue);
+              letter-spacing:0;margin-left:.35rem}
+.dettagli{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;
+          border-top:1px solid var(--bordo);padding-top:.7rem}
+.dettagli div{display:flex;flex-direction:column;gap:.1rem}
+.dettagli b{font-size:1.05rem;font-weight:700;font-variant-numeric:tabular-nums}
+.dettagli span{font-size:.68rem;color:var(--tenue);text-transform:uppercase;
+               letter-spacing:.05em}
+.follower{background:var(--carta);border:1px solid var(--bordo);
+          border-left:3px solid var(--oro);border-radius:12px;padding:.9rem 1rem;
+          font-size:.92rem;white-space:pre-line}
+.vuoto{color:var(--tenue);text-align:center;padding:2.5rem 0}
+
+video{width:100%;border-radius:14px;border:1px solid var(--bordo);display:block}
+.didascalia{background:var(--carta);border:1px solid var(--bordo);
+  border-radius:14px;padding:1rem;white-space:pre-wrap;font-size:.95rem;
+  max-height:16rem;overflow-y:auto}
+button{width:100%;padding:1rem;font-size:1rem;font-weight:700;font-family:inherit;
+  color:#0b0b0b;background:var(--oro);border:0;border-radius:12px;
+  cursor:pointer;-webkit-appearance:none}
+button:active{opacity:.8}
+button.fatto{background:var(--sale)}
+</style></head><body><main>
+<header class="testata">
+  <p class="marchio">TIPS<span>MOTIVAZIONALE</span></p>
+  <p class="nome" style="font-size:1.3rem">136-chaplin-dieci-giorni-dopo</p>
+  <p class="quando">Il video sta nelle <b>notifiche</b> di TikTok, non nelle
+     Bozze: apri l'icona dei messaggi e tocca l'avviso. Poi copia qui la
+     didascalia.</p>
+</header>
+<video controls preload="metadata" src="video/136-chaplin-dieci-giorni-dopo.mp4"></video>
+<button id="copia">Copia la didascalia</button>
+<div class="didascalia" id="testo">Nel 1919 Charlie Chaplin è l&#x27;uomo più famoso del cinema. Il 7 luglio gli nasce un figlio, Norman Spencer. Muore tre giorni dopo.
+
+Dieci giorni dopo il funerale torna in studio. Non si ferma: cerca un bambino. Lo trova all&#x27;Orpheum Theatre di Los Angeles, si chiama Jackie Coogan e ha quattro anni.
+
+Comincia a girare il 31 luglio 1919 e finisce il 30 luglio 1920: diciotto mesi di lavorazione per un film di sessantotto minuti. Nel frattempo il suo divorzio rischia di far finire la pellicola sotto sequestro: porta il negativo fuori dalla California e lo monta in una stanza dell&#x27;Hotel Utah, a Salt Lake City.
+
+Il 21 gennaio 1921, alla Carnegie Hall di New York, esce «Il monello»: un vagabondo che cresce un bambino trovato per strada. Un uomo che aveva appena perso un figlio ha passato diciotto mesi a raccontare uno che ne salva uno.
+
+Se questa storia ti ha dato qualcosa, condividila con chi sta attraversando un lutto.
+
+Seguici per non perderti le nuove storie vere. Ogni giorno.
+
+#storiedisuccesso #motivazione #crescitapersonale #mentalità #tipsmotivazionale</div>
+</main>
+<script>
+const b = document.getElementById('copia');
+b.addEventListener('click', async () => {
+  const t = document.getElementById('testo').innerText;
+  try { await navigator.clipboard.writeText(t); }
+  catch (e) {
+    const s = document.createRange();
+    s.selectNodeContents(document.getElementById('testo'));
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(s);
+    document.execCommand('copy'); sel.removeAllRanges();
+  }
+  b.textContent = 'Copiata'; b.classList.add('fatto');
+  setTimeout(() => { b.textContent = 'Copia la didascalia';
+                     b.classList.remove('fatto'); }, 2500);
+});
+</script></body></html>
