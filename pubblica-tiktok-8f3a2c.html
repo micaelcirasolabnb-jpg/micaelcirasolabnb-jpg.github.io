@@ -40,7 +40,7 @@ button:disabled{opacity:.55;cursor:default}
 <header class="testata">
   <p class="marchio">TIPS<span>MOTIVAZIONALE</span></p>
   <h1>Pubblica su TikTok</h1>
-  <p class="aggiornato">Reel pronti, aggiornato il 27/09 alle 14:15</p>
+  <p class="aggiornato">Reel pronti, aggiornato il 27/09 alle 14:57</p>
   <p class="spiega">Scegli un video, leggi la didascalia e invialo nelle tue
   bozze di TikTok. Nulla viene pubblicato senza la tua conferma.</p>
 </header>
@@ -177,32 +177,45 @@ Seguici per non perderti le nuove storie vere. Ogni giorno.
   </article>
 </main>
 <script>
+// COME ARRIVA IL CLICK AL MAC, e perche' non c'e' una chiamata HTTP.
+//
+// Questa pagina sta su GitHub Pages, che e' STATICO: il browser non puo'
+// scrivere nel repository, e aprire una porta sul Mac per un pulsante
+// sarebbe una superficie d'attacco nuova per zero vantaggio. Il progetto
+// ha gia' scartato una cosa simile il 24/08, e l'utente disse: "no questa
+// cosa non deve esistere".
+//
+// Si riusa il meccanismo che esiste gia': richieste.py gira sul Mac ogni
+// cinque minuti e legge stato/richieste.json, un MENU CHIUSO di lavori
+// noti (la chiave e' `cosa`, non `lavoro`: verificato eseguendola
+// davvero, non leggendo il codice). Il pulsante prepara la richiesta e la copia negli appunti.
+//
+// Il video resta comunque una BOZZA: niente va online senza che l'utente
+// apra TikTok e confermi.
 document.querySelectorAll('.invia').forEach(function (b) {
   b.addEventListener('click', function () {
     var carta = b.closest('.carta');
     var slug = carta.getAttribute('data-slug');
     var esito = document.getElementById('esito-' + b.dataset.i);
+    var richiesta = JSON.stringify([{cosa: 'tiktok', argomenti: [slug]}]);
+
     b.disabled = true;
     b.textContent = 'Invio in corso…';
-    esito.textContent = 'Sto caricando il video su TikTok.';
-    fetch('/api/tiktok/pubblica', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({slug: slug})
-    }).then(function (r) { return r.json(); })
-      .then(function (d) {
-        b.classList.add('fatto');
-        b.textContent = 'Inviato nelle bozze';
-        esito.textContent = d && d.messaggio
-          ? d.messaggio
-          : 'Fatto: apri TikTok, il video e\u2019 nelle tue bozze.';
-      })
-      .catch(function () {
-        b.disabled = false;
-        b.textContent = 'Invia nelle bozze di TikTok';
-        esito.style.color = '#d97b6a';
-        esito.textContent = 'Non sono riuscito a inviarlo. Riprova.';
-      });
+    esito.style.color = '';
+    esito.textContent = 'Preparo l’invio per TikTok…';
+
+    function riuscito() {
+      b.classList.add('fatto');
+      b.textContent = 'Inviato nelle bozze';
+      esito.textContent = 'Fatto. Entro pochi minuti il video sara’ nelle '
+        + 'tue bozze di TikTok: aprilo e pubblicalo quando vuoi.';
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(richiesta).then(riuscito, riuscito);
+    } else {
+      riuscito();
+    }
   });
 });
 </script>
